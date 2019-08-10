@@ -1,0 +1,19 @@
+language: kotlin
+
+install: true
+sudo: false
+
+os: linux
+dist: disco
+
+script:
+  - ./gradlew build
+
+before_cache:
+  - rm -f  $HOME/.konan
+  - rm -fr $HOME/.konan
+
+cache:
+  directories:
+    - $HOME/.konan/
+    - $HOME/.gradle/wrapper/
